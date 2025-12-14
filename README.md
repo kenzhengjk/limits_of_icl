@@ -8,13 +8,23 @@ This repository contains code for training and evaluating transformer models on 
 ## Setup
 
 ### Requirements
+Create a conda environment using `requirements.txt`:
 
-Install dependencies using the provided requirements file:
+```bash
+conda create --name limits_of_icl --file requirements.txt
+```
+
+Then activate:
+
+```bash
+conda activate limits_of_icl
+```
+
+If any dependencies are not installed automatically, you can install them using:
 
 ```bash
 pip install -r requirements.txt
 ```
-
 **Note**: This project requires PyTorch with CUDA support.
 
 ## Training
@@ -32,6 +42,7 @@ pip install -r requirements.txt
 To run training on a dummy file, you can use the `src/dummy.yaml` config file.
 
 ```bash
+cd src
 python train.py --config configs/dummy.yaml
 ```
 
@@ -51,7 +62,7 @@ python train.py --config configs/dummy.yaml
    from google.colab import drive
    drive.mount('/content/drive')
    ```
-3. Create a YAML configuration file with the following structure for the model you want to evaluate. Place this file under the model's directory:
+3. Create a YAML configuration file with the following structure for the model you want to evaluate. Place this file under the corresponding model's directory:
 
 ```yaml
 model:
@@ -96,8 +107,3 @@ test_run: false                      # Set true for quick testing
 ```
 3. Update the paths in the notebook to point to your model directories
 4. Run the evaluation cells to reproduce our results and generate results of your own!
-
-
-## Citation
-
-If you use this code, please cite the paper.
