@@ -1,0 +1,9 @@
+# macOS system files
+.DS_Store
+
+# Python cache directories
+__pycache__/
+*.pyc
+
+# Model files and training artifacts
+models/
